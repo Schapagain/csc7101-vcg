@@ -1,0 +1,19 @@
+{true}
+x := a;
+y := b;
+{state = 0}
+while x != y do
+begin
+    if x > y then
+        x := f(x - y)
+    else
+        y := g(y - x);
+    
+    state := state + 1;
+    if state > MAX_ITER then
+        assert {false}  // Should never reach here if termination is guaranteed
+    else
+        skip
+end;
+result := x
+{result = gcd(a, b)}

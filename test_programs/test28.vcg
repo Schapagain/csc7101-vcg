@@ -1,0 +1,1 @@
+{true} x := f(g(y, z), h(w)) {x = f(g(y, z), h(w))}

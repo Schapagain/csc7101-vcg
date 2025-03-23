@@ -1,0 +1,29 @@
+{n > 0 and m > 0}
+matrix := 0;  // Represents an n×m matrix initialized to 0
+i := 0;
+{i >= 0 and i <= n}
+while i < n do
+begin
+    j := 0;
+    {j >= 0 and j <= m and forall x,y. ((x < i or (x = i and y < j)) => matrix(x,y) = x*y)}
+    while j < m do
+    begin
+        matrix(i,j) := i * j;
+        if (i + j) % 2 = 0 then
+            matrix(i,j) := matrix(i,j) + 1
+        else
+            skip;
+        j := j + 1
+    end;
+    assert {forall y. (0 <= y and y < m => matrix(i,y) >= i*y)};
+    i := i + 1
+end;
+sum := 0;
+i := 0;
+{i >= 0 and i <= n and sum = sum({matrix(k,k) | 0 <= k < i and k < m})}
+while i < n and i < m do
+begin
+    sum := sum + matrix(i,i);
+    i := i + 1
+end
+{sum = sum({matrix(k,k) | 0 <= k < min(n,m)})}

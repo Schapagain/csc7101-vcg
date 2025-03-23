@@ -1,0 +1,15 @@
+{n > 0} 
+i := 0; 
+sum := 0; 
+{i >= 0 and sum = i*(i+1)/2 and i <= n} 
+while i < n do 
+begin 
+    sum := sum + i; 
+    i := i + 1; 
+    if sum > 100 then 
+        assert {sum > 100} 
+    else 
+        skip 
+end; 
+result := sum 
+{result = n*(n+1)/2}

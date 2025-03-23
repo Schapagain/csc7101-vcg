@@ -1,0 +1,1 @@
+{true} if x => y then z := 1 else z := 0 {(not x or y) => z = 1 and (x and not y) => z = 0}

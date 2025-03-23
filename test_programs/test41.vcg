@@ -1,0 +1,29 @@
+{a > 0 and b > 0}
+x := min(a, b);
+y := max(a, b);
+gcd := 1;
+{x > 0 and y > 0 and gcd = gcd(x, y)}
+while x > 0 do
+begin
+    if y % x = 0 then
+        begin
+            gcd := x;
+            x := 0
+        end
+    else
+        begin
+            temp := x;
+            x := y % x;
+            y := temp
+        end;
+    
+    assert {(x = 0 => gcd = gcd(a, b)) and (x > 0 => gcd = 1)}
+end;
+lcm := (a * b) / gcd;
+if a <=> b then
+    result := gcd
+else if a => b then
+    result := a
+else
+    result := b
+{(a = b => result = gcd) and (a > b => result = a) and (a < b => result = b) and lcm * gcd = a * b}

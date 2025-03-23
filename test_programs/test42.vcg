@@ -1,0 +1,35 @@
+{n >= 0 and forall i. (0 <= i and i < n => arr(i) >= 0)}
+i := 0;
+sum := 0;
+product := 1;
+{i >= 0 and i <= n and sum = sum({arr(j) | 0 <= j < i}) and product = product({arr(j) | 0 <= j < i})}
+while i < n do
+begin
+    current := arr(i);
+    sum := sum + current;
+    
+    if current = 0 then
+        begin
+            assert {product > 0 => forall j. (0 <= j and j < i => arr(j) > 0)};
+            product := 0
+        end
+    else
+        product := product * current;
+    
+    if i > 0 and current < arr(i-1) then
+        sorted := false
+    else
+        skip;
+    
+    i := i + 1
+end;
+if sorted and sorted <=> true then
+    assert {forall i,j. ((0 <= i and i < j and j < n) => arr(i) <= arr(j))}
+else
+    skip;
+mean := sum / n;
+if product = 0 then
+    geometric_mean := 0
+else
+    geometric_mean := power(product, 1/n)
+{mean = sum({arr(i) | 0 <= i < n})/n and ((product = 0 and exists i. (0 <= i and i < n and arr(i) = 0)) or geometric_mean = power(product({arr(i) | 0 <= i < n}), 1/n))}

@@ -1,0 +1,1 @@
+{true} if x > 0 then begin {i >= 0} while i < x do i := i + 1 end else begin if y > 0 then z := 1 else z := 0 end {(x > 0 and i = x) or (x <= 0 and ((y > 0 and z = 1) or (y <= 0 and z = 0)))}

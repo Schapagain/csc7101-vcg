@@ -1,0 +1,10 @@
+{true} 
+{i >= 0} 
+while i < 10 do begin 
+    {j >= 0} 
+    while j < 5 do begin 
+        j := j + 1 
+    end; 
+    i := i + 1 
+end 
+{i = 10 and j = 5}

@@ -1,0 +1,4 @@
+{ x >= 0 and y > 0}
+q := 0;
+r := x
+{ x = q*y + r and 0 <= r and y > 0}

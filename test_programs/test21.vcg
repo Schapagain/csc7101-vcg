@@ -1,0 +1,1 @@
+{true} if x <=> y then z := 1 else z := 0 {((x and y) or (not x and not y)) => z = 1 and ((x and not y) or (not x and y)) => z = 0}

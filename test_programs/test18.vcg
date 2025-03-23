@@ -1,0 +1,1 @@
+{x = n and n >= 0} {x >= 0 and i >= 0} while x > 0 do begin i := i + 1; x := x - 1 end {x = 0 and i = n}

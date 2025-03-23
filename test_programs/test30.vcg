@@ -1,0 +1,1 @@
+{i = 0 and sum = 0} {i >= 0 and sum = i*(i+1)/2} while i < n and sum < max do begin sum := sum + i; i := i + 1 end {(i = n or sum >= max) and sum = i*(i+1)/2}

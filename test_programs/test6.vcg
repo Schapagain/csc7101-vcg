@@ -1,0 +1,9 @@
+{ x >= 0 }
+sum := 0;
+i := 0;
+{ sum = i*(i+1)/2 and i <= x }
+while i < x do begin
+  i := i + 1;
+  sum := sum + i
+end
+{ sum = x*(x+1)/2 }
